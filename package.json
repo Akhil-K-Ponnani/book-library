@@ -5,9 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start:dev": "set NODE_ENV=dev && nodemon src/server",
-    "start:prod": "set NODE_ENV=prod && node src/server",
-    "test": "set NODE_ENV=test && mocha --exit --timeout 10000"
+    "start:dev": "cross-env NODE_ENV=dev nodemon src/server",
+    "start:prod": "cross-env NODE_ENV=prod node src/server",
+    "test": "cross-env NODE_ENV=test mocha --exit --timeout 10000"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "chai": "^4.3.7",
     "chai-http": "^4.4.0",
+    "cross-env": "^7.0.3",
     "mocha": "^10.2.0"
   }
 }
